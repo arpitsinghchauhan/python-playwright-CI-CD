@@ -1,17 +1,19 @@
+from playwright.sync_api import Page, expect, Locator
 
 class BasePage:
     #Parent of all page objects.
     #contains generic methods for interaction and logging
-    def __init__(self,page: page):
+    def __init__(self,page:Page):
         self.page=page
 
     def navigate(self,url:str)->None :
         print(f"INFO:Navigating to {url}")
         self.page.goto(url)    
 
-    def click(self,selector:str)->:
+    def click(self,selector:str)->None:
         # wait for element tobe visible and enabled before clicking
         print(f"INFO: Clicking on element {selector}") 
+        self.page.click(selector)
 
     def fill_text(self,selector:str,text:str)->None:
         # wait for element to be visible and enabled and clear before filling text
