@@ -1,0 +1,1 @@
+#this is used to make the core folder a package, so that we can import from it in other parts of the project.
